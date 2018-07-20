@@ -1,12 +1,7 @@
-FROM alpine:3.4
+FROM node:9.4.0-alpine as api
 
-# File Author / Maintainer
 LABEL authors="Niroshan Ranapathi"
 
-# Update & install required packages
-RUN apk add --update nodejs
-
-# Install app dependencies
 COPY package.json /www/package.json
 RUN cd /www; npm install
 
@@ -24,3 +19,5 @@ EXPOSE  8080
 
 # start command as per package.json
 CMD ["npm", "start"]
+
+
