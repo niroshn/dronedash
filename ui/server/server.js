@@ -2,7 +2,7 @@ import http from 'http';
 import express from 'express';
 import cors from 'cors';
 import webpack from 'webpack';
-import webpackConfig from '../ui/webpack.config'
+import webpackConfig from './../webpack.config'
 import webpackDevMiddleware from 'webpack-dev-middleware';
 const compiler = webpack(webpackConfig);
 import webpackHotMiddleware from "webpack-hot-middleware";
@@ -37,7 +37,7 @@ io.on('connection',(connection)=>{
 
 app.use(express.static('public'));
 app.use(express.static('public/css'));
-const port = process.env.PORT || 8090;
+const port = process.env.PORT || 8088;
 server.listen(port,()=>{
     console.info(`Redux Server is listening on port ${port}.`);
 });

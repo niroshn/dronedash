@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 import { MainDisplay } from './MainDisplay';
 
-import {} from './../../actions';
-
-const mapStateToProps = state => {};
+const mapStateToProps = state => {
+  return {
+    isCheckingOut: {}
+  };
+};
 const mapDispatchToProps = dispatch => ({});
 
 export const MainContainer = connect(

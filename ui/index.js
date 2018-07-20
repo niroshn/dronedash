@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { App } from './src/components'
 import reactDOM from 'react-dom'

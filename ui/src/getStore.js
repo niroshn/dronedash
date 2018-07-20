@@ -9,7 +9,7 @@ import { Iterable } from 'immutable'
 import createSagaMiddleware from 'redux-saga';
 import thunk from 'redux-thunk'
 
-import { getQuery } from './utility'
+
 import { initSagas } from './initSagas';
 import { reducer } from './combineReducers';
 import { defaultState } from './defaultState'
@@ -26,7 +26,7 @@ const logger = createLogger({
 export const getStore = ()=>{
     const sagaMiddleware = createSagaMiddleware();
     const middleWares = [sagaMiddleware,thunk];
-    if (getQuery()['logger']) { middleWares.push(logger)}
+    // if (getQuery()['logger']) { middleWares.push(logger)}
     const composables = [applyMiddleware(...middleWares)
     //    , window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     ];
